@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The $100 Sprint — Phounder Studio</title>
+  <meta name="description" content="Get your first $100 online in 7–14 days using AI + Upwork. A guided execution sprint — not theory.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#f0fdf0',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#38b000',600:'#2d8f00',700:'#236d00',800:'#1a5200',900:'#0f3000' }, surface: '#eaf4f4', cream: '#f8faf8' },
+        fontFamily: { display: ['"Cormorant Garamond"','serif'], body: ['Outfit','sans-serif'] }
+      }}
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:'Outfit',sans-serif;color:#1a1a1a;background:#fff}
+    .font-display{font-family:'Cormorant Garamond',serif;letter-spacing:-0.03em}
+    nav{backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);background:rgba(255,255,255,.85)}
+    .neu-card{background:#fff;border-radius:24px;box-shadow:8px 8px 20px rgba(0,0,0,.06),-8px -8px 20px rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.6);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+    .neu-card:hover{transform:translateY(-4px)}
+    .neu-inset{background:linear-gradient(145deg,#f0f0f0,#fff);border-radius:16px;box-shadow:inset 4px 4px 8px rgba(0,0,0,.05),inset -4px -4px 8px rgba(255,255,255,.8)}
+    .icon-container{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(56,176,0,.08),rgba(56,176,0,.03));border:1px solid rgba(56,176,0,.1);flex-shrink:0}
+    .cta-btn{position:relative;display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:linear-gradient(135deg,#38b000,#2d8f00);color:#fff;border:none;border-radius:60px;font-weight:600;font-size:16px;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;box-shadow:0 4px 15px rgba(56,176,0,.3),0 1px 3px rgba(0,0,0,.1);text-decoration:none}
+    .cta-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 8px 25px rgba(56,176,0,.4),0 2px 6px rgba(0,0,0,.1)}
+    .cta-btn:focus-visible{outline:3px solid #4ade80;outline-offset:3px}
+    .gradient-text{background:linear-gradient(135deg,#38b000,#2d8f00,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .grain-overlay::before{content:'';position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nf'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nf)'/%3E%3C/svg%3E");pointer-events:none;z-index:1}
+    .step-line{position:absolute;left:28px;top:56px;bottom:-40px;width:2px;background:linear-gradient(to bottom,#38b000,transparent)}
+    @keyframes pulse-ring{0%{transform:scale(1);opacity:.4}100%{transform:scale(1.6);opacity:0}}
+    .pulse-dot::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid #38b000;animation:pulse-ring 2s ease-out infinite}
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-100/50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display font-bold text-xl">P</span>
+        </div>
+        <span class="font-display text-2xl font-semibold text-gray-900 tracking-tight">Phounder <span class="text-brand-500">Studio</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="index.html#programs" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Programs</a>
+        <a href="index.html#results" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Results</a>
+        <a href="pay.html" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Pay</a>
+        <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Contact</a>
+        <a href="#checkout" class="cta-btn !py-3 !px-7 !text-sm">Start the $100 Sprint<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <a href="index.html" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <i data-lucide="arrow-left" class="w-6 h-6 text-gray-700"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden">
+  <div class="absolute top-32 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-brand-100/40 to-brand-200/20 blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-surface/60 to-brand-50/30 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 mb-6">
+          <span class="relative w-2 h-2 rounded-full bg-brand-500 pulse-dot"></span>
+          <span class="text-sm font-medium text-brand-700">Guided Execution Sprint · $10</span>
+        </div>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05] mb-6">
+          Get your first <span class="gradient-text">$100 online</span> in 7–14 days using AI + Upwork.
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
+          No skills. No experience. No portfolio. Just a simple step-by-step system that shows you exactly how to land your first paying client using AI tools and Upwork.
+        </p>
+        <div class="flex flex-wrap items-center gap-4 mb-8">
+          <a href="#checkout" class="cta-btn">
+            Start the $100 Sprint
+            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+          </a>
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <i data-lucide="lock" class="w-4 h-4 text-brand-500"></i>
+            $10 · Instant Drive access after payment
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 italic">Used by beginners who want their first real online income — not theory.</p>
+      </div>
+
+      <div class="relative">
+        <div class="neu-card p-8 lg:p-10 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-brand-50 to-transparent rounded-bl-full opacity-60"></div>
+          <div class="relative z-10">
+            <div class="flex items-baseline gap-3 mb-1">
+              <span class="font-display text-7xl font-bold gradient-text">$10</span>
+              <span class="text-gray-400 text-xl">one-time</span>
+            </div>
+            <p class="text-sm text-brand-600 font-semibold uppercase tracking-widest mb-6">The $100 Sprint Pack</p>
+
+            <div class="space-y-3">
+              <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0"></i><span class="text-gray-700 text-sm">Step-by-step execution system</span></div>
+              <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0"></i><span class="text-gray-700 text-sm">Copy-paste Upwork proposal templates</span></div>
+              <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0"></i><span class="text-gray-700 text-sm">AI service ideas beginners can sell</span></div>
+              <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0"></i><span class="text-gray-700 text-sm">Upwork profile setup guide</span></div>
+              <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0"></i><span class="text-gray-700 text-sm">Daily action plan (7–14 days)</span></div>
+              <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0"></i><span class="text-gray-700 text-sm">Client closing scripts</span></div>
+              <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0"></i><span class="text-gray-700 text-sm">Delivery + testimonial system</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="py-20 lg:py-28 bg-cream relative grain-overlay">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">The Problem</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        Why most people stay <span class="italic text-gray-400">stuck at $0</span> online.
+      </h2>
+    </div>
+
+    <p class="text-lg text-gray-600 mb-8 text-center">Most people trying freelancing or AI tools fail for 3 reasons:</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="neu-card p-6">
+        <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mb-4"><i data-lucide="brain" class="w-5 h-5 text-red-400"></i></div>
+        <p class="font-medium text-gray-900">They overthink instead of applying</p>
+      </div>
+      <div class="neu-card p-6">
+        <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mb-4"><i data-lucide="layers" class="w-5 h-5 text-red-400"></i></div>
+        <p class="font-medium text-gray-900">They learn too many things at once</p>
+      </div>
+      <div class="neu-card p-6">
+        <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mb-4"><i data-lucide="send" class="w-5 h-5 text-red-400"></i></div>
+        <p class="font-medium text-gray-900">They never send enough proposals</p>
+      </div>
+    </div>
+
+    <div class="neu-inset p-8 text-center">
+      <p class="text-gray-700 leading-relaxed">
+        So they stay in the same cycle:<br>
+        <span class="font-display text-2xl font-semibold text-gray-900">watching videos → learning → no income → repeating</span><br>
+        <span class="text-gray-500 italic mt-2 inline-block">And nothing changes.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Reframe -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">The Reframe</span>
+    <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-8">
+      You don't need skills.<br>
+      <span class="gradient-text">You need a system.</span>
+    </h2>
+    <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">The truth is: people are not getting paid for being "skilled." They are getting paid for:</p>
+
+    <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+      <div class="neu-card p-8">
+        <div class="icon-container mb-4 mx-auto"><i data-lucide="zap" class="w-6 h-6 text-brand-500"></i></div>
+        <p class="font-display text-xl font-bold text-gray-900">Solving simple problems fast</p>
+      </div>
+      <div class="neu-card p-8">
+        <div class="icon-container mb-4 mx-auto"><i data-lucide="repeat" class="w-6 h-6 text-brand-500"></i></div>
+        <p class="font-display text-xl font-bold text-gray-900">Consistently showing up</p>
+      </div>
+      <div class="neu-card p-8">
+        <div class="icon-container mb-4 mx-auto"><i data-lucide="target" class="w-6 h-6 text-brand-500"></i></div>
+        <p class="font-display text-xl font-bold text-gray-900">Making offers to the right people</p>
+      </div>
+    </div>
+
+    <p class="text-lg text-gray-700 font-medium">And AI now removes most of the technical barriers.</p>
+  </div>
+</section>
+
+<!-- What this sprint does -->
+<section class="py-20 lg:py-28 bg-cream relative grain-overlay">
+  <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16 max-w-2xl mx-auto">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">What This Sprint Does</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        From <span class="italic text-gray-400">zero</span> → <span class="gradient-text">first paying client.</span>
+      </h2>
+      <p class="text-gray-600 mt-4">A step-by-step system that shows you exactly how to:</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="neu-card p-6 flex items-start gap-4"><div class="icon-container !w-12 !h-12"><i data-lucide="package" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium">Pick a simple AI service people already pay for</p></div>
+      <div class="neu-card p-6 flex items-start gap-4"><div class="icon-container !w-12 !h-12"><i data-lucide="user-check" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium">Set up your Upwork profile in 24 hours</p></div>
+      <div class="neu-card p-6 flex items-start gap-4"><div class="icon-container !w-12 !h-12"><i data-lucide="bot" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium">Use AI to write winning proposals — plus 20+ templates that have won jobs</p></div>
+      <div class="neu-card p-6 flex items-start gap-4"><div class="icon-container !w-12 !h-12"><i data-lucide="send" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium">Apply to real jobs daily</p></div>
+      <div class="neu-card p-6 flex items-start gap-4"><div class="icon-container !w-12 !h-12"><i data-lucide="handshake" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium">Close your first paid client</p></div>
+      <div class="neu-card p-6 flex items-start gap-4"><div class="icon-container !w-12 !h-12"><i data-lucide="badge-check" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium">Get your first proof of income</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- The 5-Step System -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">The System</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        The <span class="gradient-text">5-Step</span> $100 System.
+      </h2>
+    </div>
+
+    <div class="space-y-10">
+      <div class="relative pl-16">
+        <div class="step-line"></div>
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">1</span>
+        </div>
+        <div class="neu-card p-7">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-1">Pick ONE service</h3>
+          <p class="text-gray-600">Done-for-you services. No analysis paralysis.</p>
+        </div>
+      </div>
+      <div class="relative pl-16">
+        <div class="step-line"></div>
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">2</span>
+        </div>
+        <div class="neu-card p-7">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-1">Create a simple offer</h3>
+          <p class="text-gray-600">A clear deliverable, a clear price, a clear outcome.</p>
+        </div>
+      </div>
+      <div class="relative pl-16">
+        <div class="step-line"></div>
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">3</span>
+        </div>
+        <div class="neu-card p-7">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-1">Build your Upwork profile</h3>
+          <p class="text-gray-600">Using done-for-you templates that already convert.</p>
+        </div>
+      </div>
+      <div class="relative pl-16">
+        <div class="step-line"></div>
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">4</span>
+        </div>
+        <div class="neu-card p-7">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-1">Send 20–50 proposals daily</h3>
+          <p class="text-gray-600">Using proven templates. Volume + system = results.</p>
+        </div>
+      </div>
+      <div class="relative pl-16">
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">5</span>
+        </div>
+        <div class="neu-card p-7 border-2 border-brand-200">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-1">Close a small first job ($10–$100)</h3>
+          <p class="text-gray-600">Focus on speed, not perfection. Momentum beats theory.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why this works -->
+<section class="py-20 lg:py-28 bg-cream relative grain-overlay">
+  <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16 max-w-2xl mx-auto">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">Why This Works</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        It's not magic. <span class="gradient-text">It's mechanics.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="neu-card p-7 flex items-start gap-4"><div class="icon-container"><i data-lucide="users" class="w-6 h-6 text-brand-500"></i></div><div><h3 class="font-display text-xl font-bold text-gray-900 mb-1">Clients are already on Upwork</h3><p class="text-gray-500 text-sm">Looking for help — right now.</p></div></div>
+      <div class="neu-card p-7 flex items-start gap-4"><div class="icon-container"><i data-lucide="zap" class="w-6 h-6 text-brand-500"></i></div><div><h3 class="font-display text-xl font-bold text-gray-900 mb-1">AI makes execution faster</h3><p class="text-gray-500 text-sm">Not harder. Beginners can deliver pro-level work.</p></div></div>
+      <div class="neu-card p-7 flex items-start gap-4"><div class="icon-container"><i data-lucide="rocket" class="w-6 h-6 text-brand-500"></i></div><div><h3 class="font-display text-xl font-bold text-gray-900 mb-1">No experience needed</h3><p class="text-gray-500 text-sm">Start small. Build proof. Scale up.</p></div></div>
+      <div class="neu-card p-7 flex items-start gap-4"><div class="icon-container"><i data-lucide="trending-up" class="w-6 h-6 text-brand-500"></i></div><div><h3 class="font-display text-xl font-bold text-gray-900 mb-1">One client = momentum</h3><p class="text-gray-500 text-sm">You only need ONE to start the snowball.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Who this is / is not for -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div>
+        <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">Who This Is For</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-8">This sprint is for...</h2>
+        <div class="space-y-4">
+          <div class="neu-card p-5 flex items-start gap-4"><div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium pt-2">Beginners with no income online</p></div>
+          <div class="neu-card p-5 flex items-start gap-4"><div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium pt-2">Students</p></div>
+          <div class="neu-card p-5 flex items-start gap-4"><div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium pt-2">Job seekers</p></div>
+          <div class="neu-card p-5 flex items-start gap-4"><div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium pt-2">People stuck learning but not earning</p></div>
+          <div class="neu-card p-5 flex items-start gap-4"><div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-brand-500"></i></div><p class="text-gray-700 font-medium pt-2">Anyone who wants their first online money — fast</p></div>
+        </div>
+      </div>
+
+      <div>
+        <span class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 block">Who This Is NOT For</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-8">This is <span class="italic text-gray-400">not</span> for...</h2>
+        <div class="space-y-4">
+          <div class="neu-card p-5 flex items-start gap-4 opacity-70"><div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0"><i data-lucide="x" class="w-5 h-5 text-gray-400"></i></div><p class="text-gray-700 pt-2">People who don't want to take action</p></div>
+          <div class="neu-card p-5 flex items-start gap-4 opacity-70"><div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0"><i data-lucide="x" class="w-5 h-5 text-gray-400"></i></div><p class="text-gray-700 pt-2">People looking for passive income immediately</p></div>
+          <div class="neu-card p-5 flex items-start gap-4 opacity-70"><div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0"><i data-lucide="x" class="w-5 h-5 text-gray-400"></i></div><p class="text-gray-700 pt-2">People who won't send proposals daily</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- After completion -->
+<section class="py-20 lg:py-28 bg-cream relative grain-overlay">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">After Completion</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        By the end, you will have...
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="neu-card p-6 flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 flex-shrink-0 mt-0.5"></i><p class="text-gray-700 font-medium">Your Upwork profile live</p></div>
+      <div class="neu-card p-6 flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 flex-shrink-0 mt-0.5"></i><p class="text-gray-700 font-medium">Your first proposals sent</p></div>
+      <div class="neu-card p-6 flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 flex-shrink-0 mt-0.5"></i><p class="text-gray-700 font-medium">Your first paid client OR active pipeline</p></div>
+      <div class="neu-card p-6 flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 flex-shrink-0 mt-0.5"></i><p class="text-gray-700 font-medium">Your first online income proof</p></div>
+      <div class="neu-card p-6 flex items-start gap-3 md:col-span-2"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 flex-shrink-0 mt-0.5"></i><p class="text-gray-700 font-medium">Confidence that you can actually earn online</p></div>
+    </div>
+
+    <div class="neu-inset p-8 mt-12 text-center">
+      <p class="font-display text-2xl text-gray-900 leading-snug">
+        This is not a "watch and learn" course. It is a <span class="gradient-text font-bold">guided execution sprint.</span>
+      </p>
+      <p class="text-gray-600 mt-3">If you follow the steps, you will move closer to your first online income. If you don't execute, nothing changes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Checkout -->
+<section id="checkout" class="py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">Start Today</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-4">
+        Start Your <span class="gradient-text">First $100 Sprint</span> Today
+      </h2>
+      <p class="text-lg text-gray-600">Stop learning. <span class="font-semibold text-gray-900">Start earning.</span></p>
+      <p class="text-sm text-gray-500 mt-3">After payment, you'll be redirected to your private Google Drive access link.</p>
+    </div>
+
+    <div class="neu-card overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white/80">
+        <div class="flex items-center gap-3">
+          <div class="icon-container !w-10 !h-10"><i data-lucide="lock" class="w-4 h-4 text-brand-500"></i></div>
+          <div>
+            <p class="text-sm font-semibold text-gray-900 leading-tight">Secure Checkout · $10</p>
+            <p class="text-xs text-gray-500">Powered by Flot</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+          <span class="text-xs font-medium text-brand-700">Live</span>
+        </div>
+      </div>
+
+      <div class="relative bg-white" style="height: 720px;">
+        <div id="checkout-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-white z-10 transition-opacity duration-500">
+          <div class="w-12 h-12 rounded-full border-4 border-brand-100 border-t-brand-500 animate-spin mb-4"></div>
+          <p class="text-sm text-gray-500 font-medium">Loading secure checkout…</p>
+        </div>
+        <!-- TODO: Replace with the dedicated $10 Flot checkout link when ready (with Drive-folder redirect) -->
+        <iframe
+          src="https://pay.flotme.ai/phounderstudiolimited"
+          title="The $100 Sprint — checkout"
+          loading="lazy"
+          allow="payment *"
+          referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+          style="width:100%;height:100%;border:0;display:block;opacity:0;transition:opacity .5s ease"
+          onload="(function(f){f.style.opacity='1';var l=document.getElementById('checkout-loader');if(l){l.style.opacity='0';setTimeout(function(){l.style.display='none'},500)}})(this)"
+        ></iframe>
+      </div>
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-6">
+      Trouble with checkout? <a href="contact.html" class="text-brand-500 font-medium hover:underline">Contact us</a> and we'll send the access link directly.
+    </p>
+  </div>
+</section>
+
+<footer class="py-12 border-t border-gray-100 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2022 – 2026 Phounder Studio SL. All rights reserved.</p>
+      <p class="text-sm text-gray-400">Built and Powered by <a href="https://www.flotme.ai/" target="_blank" rel="noopener" class="font-medium text-gray-700 hover:text-brand-500 transition-colors">Flot</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

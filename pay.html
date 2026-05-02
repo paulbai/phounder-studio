@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay — Phounder Studio</title>
+  <meta name="description" content="Secure checkout for Phounder Studio programs.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#f0fdf0',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#38b000',600:'#2d8f00',700:'#236d00',800:'#1a5200',900:'#0f3000' }, surface: '#eaf4f4', cream: '#f8faf8' },
+        fontFamily: { display: ['"Cormorant Garamond"','serif'], body: ['Outfit','sans-serif'] }
+      }}
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:'Outfit',sans-serif;color:#1a1a1a;background:#f8faf8}
+    .font-display{font-family:'Cormorant Garamond',serif;letter-spacing:-0.03em}
+    nav{backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);background:rgba(255,255,255,0.85)}
+    .neu-card{background:#fff;border-radius:24px;box-shadow:8px 8px 20px rgba(0,0,0,.06),-8px -8px 20px rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.6)}
+    .icon-container{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(56,176,0,.08),rgba(56,176,0,.03));border:1px solid rgba(56,176,0,.1);flex-shrink:0}
+    .cta-btn{position:relative;display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:linear-gradient(135deg,#38b000,#2d8f00);color:#fff;border:none;border-radius:60px;font-weight:600;font-size:16px;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;box-shadow:0 4px 15px rgba(56,176,0,.3),0 1px 3px rgba(0,0,0,.1);text-decoration:none}
+    .cta-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 8px 25px rgba(56,176,0,.4),0 2px 6px rgba(0,0,0,.1)}
+    .cta-btn:focus-visible{outline:3px solid #4ade80;outline-offset:3px}
+    .gradient-text{background:linear-gradient(135deg,#38b000,#2d8f00,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-100/50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display font-bold text-xl">P</span>
+        </div>
+        <span class="font-display text-2xl font-semibold text-gray-900 tracking-tight">Phounder <span class="text-brand-500">Studio</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="index.html#programs" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Programs</a>
+        <a href="index.html#results" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Results</a>
+        <a href="index.html#pricing" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Pricing</a>
+        <a href="pay.html" class="text-sm font-medium text-brand-500 transition-colors">Pay</a>
+        <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Contact</a>
+      </div>
+      <a href="index.html" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <i data-lucide="arrow-left" class="w-6 h-6 text-gray-700"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-12 lg:pt-40 lg:pb-16 relative">
+  <div class="absolute top-32 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-brand-100/40 to-brand-200/20 blur-3xl pointer-events-none"></div>
+  <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 mb-6">
+      <i data-lucide="lock" class="w-4 h-4 text-brand-500"></i>
+      <span class="text-sm font-medium text-brand-700">Secure Checkout</span>
+    </div>
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.05] mb-6">
+      Complete your <span class="gradient-text">enrollment</span>
+    </h1>
+    <p class="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto">
+      Pay securely with mobile money or bank card. Powered by Flot — fast, secure, and PCI-DSS compliant.
+    </p>
+  </div>
+</section>
+
+<!-- Checkout -->
+<section class="pb-28 lg:pb-36">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <div class="neu-card overflow-hidden">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white/80 backdrop-blur-sm">
+        <div class="flex items-center gap-3">
+          <div class="icon-container !w-10 !h-10">
+            <i data-lucide="lock" class="w-4 h-4 text-brand-500"></i>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-gray-900 leading-tight">Secure Checkout</p>
+            <p class="text-xs text-gray-500">Powered by Flot</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+          <span class="text-xs font-medium text-brand-700">Live</span>
+        </div>
+      </div>
+
+      <div class="relative bg-white" style="height: 720px;">
+        <div id="checkout-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-white z-10 transition-opacity duration-500">
+          <div class="w-12 h-12 rounded-full border-4 border-brand-100 border-t-brand-500 animate-spin mb-4"></div>
+          <p class="text-sm text-gray-500 font-medium">Loading secure checkout…</p>
+        </div>
+        <iframe
+          src="https://pay.flotme.ai/phounderstudiolimited"
+          title="Phounder Studio secure payment checkout"
+          loading="lazy"
+          allow="payment *"
+          referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+          style="width:100%;height:100%;border:0;display:block;opacity:0;transition:opacity .5s ease"
+          onload="(function(f){f.style.opacity='1';var l=document.getElementById('checkout-loader');if(l){l.style.opacity='0';setTimeout(function(){l.style.display='none'},500)}})(this)"
+        ></iframe>
+      </div>
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-6">
+      Having trouble? <a href="contact.html" class="text-brand-500 font-medium hover:underline">Contact us</a> or pay directly at
+      <a href="https://pay.flotme.ai/phounderstudiolimited" target="_blank" rel="noopener" class="text-brand-500 font-medium hover:underline">pay.flotme.ai</a>.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 border-t border-gray-100 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2022 – 2026 Phounder Studio SL. All rights reserved.</p>
+      <p class="text-sm text-gray-400">Built and Powered by <a href="https://www.flotme.ai/" target="_blank" rel="noopener" class="font-medium text-gray-700 hover:text-brand-500 transition-colors">Flot</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

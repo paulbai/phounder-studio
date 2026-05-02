@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your First $100 Online — Phounder Studio</title>
+  <meta name="description" content="The AI & Digital Skills program that gets beginners to their first $100 online — fast.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#f0fdf0',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#38b000',600:'#2d8f00',700:'#236d00',800:'#1a5200',900:'#0f3000' }, surface: '#eaf4f4', cream: '#f8faf8' },
+        fontFamily: { display: ['"Cormorant Garamond"','serif'], body: ['Outfit','sans-serif'] }
+      }}
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:'Outfit',sans-serif;color:#1a1a1a;background:#fff}
+    .font-display{font-family:'Cormorant Garamond',serif;letter-spacing:-0.03em}
+    nav{backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);background:rgba(255,255,255,.85)}
+    .neu-card{background:#fff;border-radius:24px;box-shadow:8px 8px 20px rgba(0,0,0,.06),-8px -8px 20px rgba(255,255,255,.9),inset 0 0 0 1px rgba(255,255,255,.6);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+    .neu-card:hover{transform:translateY(-4px)}
+    .icon-container{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(56,176,0,.08),rgba(56,176,0,.03));border:1px solid rgba(56,176,0,.1);flex-shrink:0}
+    .cta-btn{position:relative;display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:linear-gradient(135deg,#38b000,#2d8f00);color:#fff;border-radius:60px;font-weight:600;font-size:16px;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;box-shadow:0 4px 15px rgba(56,176,0,.3),0 1px 3px rgba(0,0,0,.1);text-decoration:none}
+    .cta-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 8px 25px rgba(56,176,0,.4)}
+    .gradient-text{background:linear-gradient(135deg,#38b000,#2d8f00,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .step-line{position:absolute;left:28px;top:56px;bottom:-32px;width:2px;background:linear-gradient(to bottom,#38b000,transparent)}
+  </style>
+</head>
+<body>
+
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-100/50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display font-bold text-xl">P</span>
+        </div>
+        <span class="font-display text-2xl font-semibold text-gray-900 tracking-tight">Phounder <span class="text-brand-500">Studio</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="index.html#programs" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Programs</a>
+        <a href="index.html#results" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Results</a>
+        <a href="pay.html" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Pay</a>
+        <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors">Contact</a>
+        <a href="https://www.skool.com/community-builders-7849/about" class="cta-btn !py-3 !px-7 !text-sm">Join Now<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden">
+  <div class="absolute top-32 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-brand-100/40 to-brand-200/20 blur-3xl pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 mb-6">
+      <i data-lucide="sparkles" class="w-4 h-4 text-brand-500"></i>
+      <span class="text-sm font-medium text-brand-700">AI & Digital Skills Program</span>
+    </div>
+    <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.05] mb-6">
+      Your <span class="gradient-text">first $100</span><br>online — fast.
+    </h1>
+    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
+      We turn beginners into job-ready digital earners using AI tools and real-world freelancing skills. Learn the skills clients are paying for right now — and use AI to deliver them 10× faster.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://www.skool.com/community-builders-7849/about" class="cta-btn">
+        Get Started Today
+        <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-gray-200 text-gray-700 font-medium hover:border-brand-500 hover:text-brand-500 transition-colors">
+        Have questions?
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- What you'll learn -->
+<section class="py-20 lg:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16 max-w-2xl mx-auto">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">What You'll Learn</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        Skills clients are <span class="gradient-text">paying for now.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="neu-card p-8">
+        <div class="icon-container mb-5"><i data-lucide="bot" class="w-6 h-6 text-brand-500"></i></div>
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">AI Tool Mastery</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">ChatGPT, Claude, and the AI stack that lets you deliver 10× the value in half the time.</p>
+      </div>
+      <div class="neu-card p-8">
+        <div class="icon-container mb-5"><i data-lucide="briefcase" class="w-6 h-6 text-brand-500"></i></div>
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Upwork Profile System</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Build a profile that lands invites — even with zero past experience or reviews.</p>
+      </div>
+      <div class="neu-card p-8">
+        <div class="icon-container mb-5"><i data-lucide="message-square-text" class="w-6 h-6 text-brand-500"></i></div>
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Proposal Writing</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">The exact proposal formula that converts cold leads into paying clients.</p>
+      </div>
+      <div class="neu-card p-8">
+        <div class="icon-container mb-5"><i data-lucide="layers" class="w-6 h-6 text-brand-500"></i></div>
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Service Packaging</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Pick a niche, package an offer, and price it so clients say yes.</p>
+      </div>
+      <div class="neu-card p-8">
+        <div class="icon-container mb-5"><i data-lucide="zap" class="w-6 h-6 text-brand-500"></i></div>
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">10× Delivery Speed</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Use AI workflows to deliver client work faster without sacrificing quality.</p>
+      </div>
+      <div class="neu-card p-8">
+        <div class="icon-container mb-5"><i data-lucide="target" class="w-6 h-6 text-brand-500"></i></div>
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">First $100 Path</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">A clear, mapped pathway from "no income" to your first $100 milestone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-sm font-semibold text-brand-500 uppercase tracking-widest mb-4 block">How It Works</span>
+      <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+        Your path to <span class="gradient-text">$100.</span>
+      </h2>
+    </div>
+
+    <div class="space-y-12">
+      <div class="relative pl-16">
+        <div class="step-line"></div>
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">1</span>
+        </div>
+        <div class="neu-card p-8">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-2">Learn the AI stack</h3>
+          <p class="text-gray-600 leading-relaxed">Get hands-on with the AI tools and digital skills that clients are actively hiring for.</p>
+        </div>
+      </div>
+      <div class="relative pl-16">
+        <div class="step-line"></div>
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">2</span>
+        </div>
+        <div class="neu-card p-8">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-2">Set up your Upwork</h3>
+          <p class="text-gray-600 leading-relaxed">Build a profile and ship your first proposals using our templates.</p>
+        </div>
+      </div>
+      <div class="relative pl-16">
+        <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <span class="text-white font-display text-2xl font-bold">3</span>
+        </div>
+        <div class="neu-card p-8 border-2 border-brand-200">
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-2">Land your first $100</h3>
+          <p class="text-gray-600 leading-relaxed">Close your first paying client and use AI to deliver fast — then scale from there.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 lg:py-28 bg-cream">
+  <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+    <h2 class="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-6">
+      Ready to earn your <span class="gradient-text">first $100?</span>
+    </h2>
+    <p class="text-lg text-gray-600 mb-10">Join the community and get the framework, templates, and accountability you need to land your first paying client.</p>
+    <a href="https://www.skool.com/community-builders-7849/about" class="cta-btn">
+      Join the Community
+      <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+    </a>
+  </div>
+</section>
+
+<footer class="py-12 border-t border-gray-100 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-400">&copy; 2022 – 2026 Phounder Studio SL. All rights reserved.</p>
+      <p class="text-sm text-gray-400">Built and Powered by <a href="https://www.flotme.ai/" target="_blank" rel="noopener" class="font-medium text-gray-700 hover:text-brand-500 transition-colors">Flot</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
