@@ -6,6 +6,11 @@
   <title>Phounder Studio — Build Skills. Earn Online. Scale Your Income.</title>
   <meta name="description" content="Phounder Studio helps you turn AI, digital skills, and software development into real income through hands-on training, coaching, and execution-focused communities.">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon-removebg-preview.png">
+  <link rel="apple-touch-icon" href="favicon-removebg-preview.png">
+  <meta name="theme-color" content="#38b000">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +65,188 @@
       --surface: #eaf4f4;
       --cream: #f8faf8;
     }
+
+    /* ============ SPLASH SCREEN ============ */
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #f8faf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      animation: splash-out 0.7s cubic-bezier(0.65, 0, 0.35, 1) 3.3s forwards;
+    }
+    #splash.gone { display: none; }
+
+    @keyframes splash-out {
+      0%   { opacity: 1; transform: scale(1); filter: blur(0); }
+      100% { opacity: 0; transform: scale(1.04); filter: blur(10px); visibility: hidden; }
+    }
+
+    .splash-bg-wash {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 30% 20%, rgba(56,176,0,0.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 75% 80%, rgba(74,222,128,0.08), transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5), transparent 70%);
+    }
+
+    .splash-grain {
+      position: absolute; inset: 0; opacity: 0.04; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='snf'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23snf)'/%3E%3C/svg%3E");
+    }
+
+    .splash-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.3);
+    }
+    .splash-glow-1 {
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(56,176,0,0.32), rgba(56,176,0,0.05) 60%, transparent 75%);
+      animation: splash-glow 2.4s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
+    }
+    .splash-glow-2 {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(74,222,128,0.28), transparent 70%);
+      animation: splash-glow 2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+    }
+
+    @keyframes splash-glow {
+      0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+      60%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1.08); }
+    }
+
+    .splash-stage {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .splash-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 220px; height: 220px;
+      border: 1.5px solid rgba(56,176,0,0.55);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .splash-ring-1 { animation: splash-ring 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; }
+    .splash-ring-2 { animation: splash-ring 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards; }
+    .splash-ring-3 { animation: splash-ring 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1.0s forwards; }
+
+    @keyframes splash-ring {
+      0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 0; border-width: 2.5px; }
+      15%  { opacity: 0.9; }
+      100% { transform: translate(-50%, -50%) scale(2.6); opacity: 0; border-width: 0.5px; }
+    }
+
+    .splash-logo-wrap {
+      position: relative;
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0.7) translateY(20px);
+      animation:
+        splash-logo-in 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards,
+        splash-logo-float 3.5s ease-in-out 1.5s infinite;
+    }
+
+    @keyframes splash-logo-in {
+      0%   { opacity: 0; transform: scale(0.7) translateY(20px); filter: blur(8px); }
+      55%  { opacity: 1; transform: scale(1.06) translateY(-3px); filter: blur(0); }
+      100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+    }
+    @keyframes splash-logo-float {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50%      { transform: scale(1) translateY(-5px); }
+    }
+
+    .splash-logo {
+      width: 340px;
+      max-width: 78vw;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 10px 30px rgba(56,176,0,0.18)) drop-shadow(0 4px 10px rgba(0,0,0,0.05));
+    }
+
+    .splash-tagline {
+      margin-top: 32px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: #38b000;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .splash-tagline .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: splash-word 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .splash-tagline .dot {
+      display: inline-block;
+      margin: 0 0.7em;
+      color: rgba(56,176,0,0.4);
+      opacity: 0;
+      animation: splash-word 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .splash-tagline .word:nth-child(1) { animation-delay: 1.4s; }
+    .splash-tagline .dot:nth-child(2)  { animation-delay: 1.55s; }
+    .splash-tagline .word:nth-child(3) { animation-delay: 1.7s; }
+    .splash-tagline .dot:nth-child(4)  { animation-delay: 1.85s; }
+    .splash-tagline .word:nth-child(5) { animation-delay: 2.0s; }
+
+    @keyframes splash-word {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .splash-progress {
+      position: absolute;
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 2px;
+      background: rgba(56,176,0,0.12);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .splash-progress::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #38b000, #4ade80);
+      animation: splash-progress 3.2s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
+    }
+    @keyframes splash-progress {
+      to { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #splash { animation-duration: 0.4s; animation-delay: 1s; }
+      .splash-glow, .splash-ring, .splash-logo-wrap, .splash-tagline .word,
+      .splash-tagline .dot, .splash-progress::after {
+        animation-duration: 0.4s !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    /* Lock scroll while splash is up */
+    html.splash-locked, html.splash-locked body { overflow: hidden !important; }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -418,6 +605,47 @@
 </head>
 <body>
 
+<!-- ============ SPLASH SCREEN ============ -->
+<div id="splash" role="status" aria-label="Loading Phounder Studio">
+  <div class="splash-bg-wash"></div>
+  <div class="splash-grain"></div>
+  <div class="splash-glow splash-glow-1"></div>
+  <div class="splash-glow splash-glow-2"></div>
+
+  <div class="splash-stage">
+    <div class="splash-ring splash-ring-1"></div>
+    <div class="splash-ring splash-ring-2"></div>
+    <div class="splash-ring splash-ring-3"></div>
+
+    <div class="splash-logo-wrap">
+      <img src="logo-removebg-preview.png" alt="Phounder Studio" class="splash-logo" width="340" height="226">
+    </div>
+
+    <div class="splash-tagline" aria-hidden="true">
+      <span class="word">Build</span>
+      <span class="dot">·</span>
+      <span class="word">Earn</span>
+      <span class="dot">·</span>
+      <span class="word">Scale</span>
+    </div>
+  </div>
+
+  <div class="splash-progress" aria-hidden="true"></div>
+</div>
+
+<script>
+  // Lock scroll while splash is up; dismiss after 4s
+  (function () {
+    document.documentElement.classList.add('splash-locked');
+    var splash = document.getElementById('splash');
+    if (!splash) { document.documentElement.classList.remove('splash-locked'); return; }
+    setTimeout(function () {
+      splash.classList.add('gone');
+      document.documentElement.classList.remove('splash-locked');
+    }, 4000);
+  })();
+</script>
+
 <!-- Scroll Progress -->
 <div id="scroll-progress" style="width: 0%;"></div>
 
@@ -427,9 +655,7 @@
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-shadow duration-300">
-          <span class="text-white font-display font-bold text-xl">P</span>
-        </div>
+        <img src="favicon-removebg-preview.png" alt="Phounder Studio" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-shadow duration-300 object-contain bg-white">
         <span class="font-display text-2xl font-semibold text-gray-900 tracking-tight">Phounder <span class="text-brand-500">Studio</span></span>
       </a>
 
